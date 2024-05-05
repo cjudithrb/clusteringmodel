@@ -5,9 +5,9 @@ import sklearn
 import pickle
 
 # Importar los modelos
-model = pickle.load(open('J:/Education/Postgrado/C2024-I/CS8130_DataAnalyticsParaTomaDecisiones/DA_Semana05/Colab/model1/model.pkl','rb'))
-sc = pickle.load(open('J:/Education/Postgrado/C2024-I/CS8130_DataAnalyticsParaTomaDecisiones/DA_Semana05/Colab/model1/standscaler.pkl','rb'))
-enc = pickle.load(open('J:/Education/Postgrado/C2024-I/CS8130_DataAnalyticsParaTomaDecisiones/DA_Semana05/Colab/model1/encoder.pkl','rb'))
+model = pickle.load(open('/home/ubuntu/clusteringmodel/model.pkl','rb'))
+sc = pickle.load(open('/home/ubuntu/clusteringmodel/standscaler.pkl','rb'))
+enc = pickle.load(open('/home/ubuntu/clusteringmodel/encoder.pkl','rb'))
 
 # crear flask
 app = Flask(__name__)
