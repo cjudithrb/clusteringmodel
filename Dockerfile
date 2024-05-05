@@ -1,6 +1,5 @@
 FROM python:3-slim
-WORKDIR /programas/clusteringmodel
-RUN pip3 install flask
+RUN pip3 install --no-cache-dir flask numpy pandas scikit-learn
 COPY . .
 EXPOSE 50000
 CMD [ "python3", "./app_model1.py" ]
