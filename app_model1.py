@@ -5,12 +5,12 @@ import sklearn
 import pickle
 
 # Importar los modelos
-model = pickle.load(open('/home/ubuntu/clusteringmodel/model.pkl','rb'))
-sc = pickle.load(open('/home/ubuntu/clusteringmodel/standscaler.pkl','rb'))
-enc = pickle.load(open('/home/ubuntu/clusteringmodel/encoder.pkl','rb'))
+model = pickle.load(open('model.pkl','rb'))
+sc = pickle.load(open('standscaler.pkl','rb'))
+enc = pickle.load(open('encoder.pkl','rb'))
 
 # crear flask
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 
 @app.route('/')
 def index():
@@ -19,9 +19,9 @@ def index():
 @app.route("/predict",methods=['POST'])
 def predict():
     G = request.form['Gender']
-    E = request.form['Age']
-    I = request.form['Income']
-    S = request.form['Score']
+    E = int(request.form['Age'])
+    I = float(request.form['Income'])
+    S = int(request.form['Score'])
 
     feature_list = [G, E, I, S]
     single_pred = np.array(feature_list).reshape(1, -1)
@@ -41,4 +41,4 @@ def predict():
 
 # python main
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
