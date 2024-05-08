@@ -13,9 +13,10 @@ http://127.0.0.1:5000/
 
 ### 4. Evidencia de la Ejecucion Local
 La solucion se desplego en un contenedor docker del EC2 AWS 
-http://100.25.213.163:5000/
+http://100.25.213.163:5000/ (La IP es dinamica, tendra una duracion de 4 horas)
 
 ![image](https://github.com/cjudithrb/clusteringmodel/assets/150221722/a49f2447-2885-4e57-9c6c-931a3813848f)
+
 
 EC2
 
